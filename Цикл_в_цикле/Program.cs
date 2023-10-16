@@ -1,4 +1,4 @@
-﻿Цикл в цикле для таблицы умножения.
+﻿/*Цикл в цикле для таблицы умножения.
 for (int i = 2; i <= 9; i++)
 {
     for (int j = 2; j <= 9; j++)
@@ -81,6 +81,46 @@ void selectionSort(int[] array)
         int temporary = array[i];
         array[i] = array[minPosition];
         array[minPosition] = temporary;
+    }
+}
+
+printArray(arr);
+selectionSort(arr);
+printArray(arr);
+*/
+
+//Упорядочить массив от от ,большего к меньшему.
+int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
+
+void printArray(int[] array)
+{
+    int count = array.Length;
+
+    for (int i = 0; i < count; i++)
+    {
+        System.Console.Write($"{array[i]} ");
+    }
+    System.Console.WriteLine();
+}
+
+void selectionSort(int[] array)
+
+{
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int maxPosition = i;
+
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if(array[j] > array[maxPosition])
+            {
+                maxPosition = j;
+            }
+        }
+
+        int temporary = array[i];
+        array[i] = array[maxPosition];
+        array[maxPosition] = temporary;
     }
 }
 
